@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PLASMA DONAR APP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="CSS\styleupdatedonor.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<div class="header fix">
+
+<form>
+<div class="navbtn">
+<i class="fa fa-bars fa-2x " aria-hidden="true" onclick="openNav()"></i>
+</div>
+</form>
+<img src="data:image/jpeg;base64,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"width="160" height="195">
+</div>
+<div class="nav fix">
+<ul>
+<li><a href="donor_page.php" >Donor History</a></li>
+<li><a href="health_report.php">Health Report</a></li>
+<li><a href="pending_request_donor.php">Pending Request</a></li>
+<li><a href="d_blood_tips.php">Blood Tips</a></li>
+<li><a href="d_contribute.php">Contribute</a></li>
+<li class="active"><a href="">More &nabla;</a>
+<ul>
+<li><a href="d_about_us.php">About Us</a></li>
+<li><a href="d_get_in_touch.php">Contact Us</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="heading fix">
+<label>Update Details</label>
+</div>
+<div id="mySidenav" class="sidenav">
+  <a  class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="update_donor.php" class="a"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+  <a href="delete_donor.php" class="b"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+<i class="fa fa-id-card-o" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['id']; ?>
+</i>
+<i class="fa fa-user" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['user_full_name']; ?>
+</i>
+<i class="fa fa-envelope" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['user_email']; ?>
+</i>
+<i class="fa fa-phone" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['user_number']; ?>
+</i>
+<i class="fa fa-calendar" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['date_of_birth']; ?>
+</i>
+<i class="fa fa-venus-mars" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['gender']; ?>
+</i>
+<i class="fa fa-tint" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['blood_group']; ?>
+</i>
+<i class="fa fa-location-arrow" aria-hidden="true" style="color:white;">
+&nbsp;<?php echo $_SESSION['city']; ?>
+</i>
+<div class="btn btn1" >
+<a href="login_donor.php"><input type="button" name="Signout" value="Sign Out"></a>
+</div>
+</div>
+<div class="outerbox">
+<div class="fixedbox">
+<span class="content">
+<h4>Important Note..!!</h4>
+<p><i class="fa fa-times" aria-hidden="true"></i>Password cannot be Changed.</p>
+<p><i class="fa fa-times" aria-hidden="true"></i>State & City cannot be Changed.</p>
+<p><i class="fa fa-times" aria-hidden="true"></i>Blood group cannot be Changed.</p>
+</span>
+</div>
+<div class="scrollbox">
+<div class="registerdonor">
+<form action="update_donor_process.php" method="POST">
+<div class="login">
+<h3>Login Details</h3>
+<table>
+<tr>
+<td colspan="2">
+<label class="username">User Name:-</label>
+<input type="text" name="user_name" required pattern="^[A-Za-z0-9._%+-@]{5,10}$" title="Enter a username between 5 to 10 letter" value="   ">
+</td>
+</tr>
+<tr>
+<td>
+<label>Full Name:-</label>
+<input type="text" name="user_full_name" required pattern="[A-z ]+$" title="Use only character & whitespace" value="Enter Name"
+</td>
+<td>
+<label>Email Id:-</label>
+<input type="email" name="user_email" required pattern="[A-Za-z0-9._%+-]+@[A-z0-9.-]+\.[a-z]{2,}$" title="Email id is not Valid" value="user email">
+</td>
+</tr>
+<tr>
+<td>
+<label>Password:-</label>
+<input type="password"name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" value="<?php echo $_SESSION['password'];?>" readonly>
+</td>
+<td>
+<label>Confirm Password:-</label>
+<input type="text" name="confirm_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" value="*************'confirm_password'];?>" readonly>
+</td>
+</tr>
+</table>
+</div>
+<div class="contact">
+<h3>Contact Details</h3>
+<table>
+<tr>
+<td>
+<label>Mobile Number:-</label>
+<input type="text" name="user_number" required pattern="^[1-9]{1}[0-9]{9}$" title="Number is not valid" value="Enter your Number">
+</td>
+<td rowspan="2">
+<label>Address:-</label>
+<textarea name="Address" placeholder="---Type---" required value = "Enter Area">
+</textarea>
+</td>
+</tr>
+<tr>
+<td>
+<label>Pincode</label>
+<input type="text" name="pincode" required pattern="^[0-9]{6}$" title="Pincode is not valid" value=" Enter Pincode">
+</td>
+</tr>
+<tr>
+<td>
+<label>City:-</label>
+<input type="text" name="city" value="Chennai" readonly value="Enter City>
+</td>
+<td>
+<label>State:-</label>
+<input type="text" name="state" value="Tamilnadu" readonly value="enter state">
+</td>
+</tr>
+</table>
+</div>
+<div class="personal">
+<h3>Personal Details</h3>
+<table>
+<tr>
+<td>
+<label>Date Of Birth:-</label>
+<input type="date" name="date_of_birth" required value="enter dob">
+</td>
+<td>
+<label>Gender:-</label>
+<div class="radio">
+<input type="radio" name="gender" class="radio1" value="Male" checked><span class="radioname" required>Male</span>
+<input type="radio" class="radio2" name="gender" value="Female"><span class="radioname" required>Female</span>
+<input type="radio" name="gender" class="radio1" value="Other"><span class="radioname" required>Other</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<label>Blood Group</label>
+<input type="text" list="bloodgroup" name="blood_group" placeholder="----Select----" required value="blood group" readonly>
+<datalist id="bloodgroup">
+<option value="A+"></option>
+<option value="A-"></option>
+<option value="AB+"></option>
+<option value="B+"></option>
+<option value="B-"></option>
+<option value="O+"></option>
+<option value="O-"></option>
+</datalist>
+</td>
+<td>
+<label>Weight In Kg:-</label>
+<input type="number" name="weight" required value="weight in kg">
+</td>
+</tr>
+</table>
+</div>
+<span>
+<input type="checkbox" name="terms" id="checkbox" required>
+</span><p>I agree to have my contact details broadcasted to the registered donors of CLKZ.net</p>
+
+<div class="btn">
+<input type="submit" name="submit" value="Update">
+<input type="reset" name="submit" value="Reset">
+</div>
+</form>
+</div>
+
+</div>
+</div>
+
+<!-- Responsive Table -->
+<div class="registerdonor">
+<form action="process.php" method="POST">
+
+<div class="rlogin">
+<h3>Login Details</h3>
+<table>
+<tr>
+<td >
+<label class="username">User Name:-</label>
+<input type="text" name="user_name" required pattern="^[A-Za-z0-9._%+-@]{5,10}$" title="Enter a username between 5 to 10 letter" value="Enter your Name">
+</td>
+</tr>
+<tr>
+<td>
+<label>Full Name:-</label>
+<input type="text" name="user_full_name" required pattern="[A-z ]+$" title="Use only character & whitespace" value="Enter Full Name">
+</tr>
+<tr>
+<td>
+<label>Email Id:-</label>
+<input type="email" name="user_email" required pattern="[A-Za-z0-9._%+-]+@[A-z0-9.-]+\.[a-z]{2,}$" title="Email id is not Valid" value="@"               ">
+</td>
+</tr>
+<tr>
+<td>
+<label>Password:-</label>
+<input type="password"name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" value="<?php echo $_SESSION['password'];?>" readonly>
+</td>
+</tr>
+<tr>
+<td>
+<label>Confirm Password:-</label>
+<input type="text" name="confirm_password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" value="************* " readonly>
+</td>
+</tr>
+</table>
+</div>
+<div class="rcontact">
+<h3>Contact Details</h3>
+<table>
+<tr>
+<td>
+<label>Mobile Number:-</label>
+<input type="text" name="user_number" required pattern="^[1-9]{1}[0-9]{9}$" title="Number is not valid" value="Enter your Number">
+</td>
+</tr>
+<tr>
+<td>
+<label>Address:-</label>
+<textarea name="Address" placeholder="---Type---" required value=" area"</textarea>
+</td>
+</tr>
+<tr>
+<td>
+<label>Pincode</label>
+<input type="text" name="pincode" required pattern="^[0-9]{6}$" title="Pincode is not valid" value="pincode">
+</td>
+</tr>
+<tr>
+<td>
+<label>City:-</label>
+<input type="text" name="city" value="Chennai" readonly value="Chennai">
+</td>
+</tr>
+<tr>
+<td>
+<label>State:-</label>
+<input type="text" name="state" value="Tamilnadu" readonly value="enter state">
+</td>
+</tr>
+</table>
+</div>
+<div class="rpersonal">
+<h3>Personal Details</h3>
+<table>
+<tr>
+<td>
+<label>Date Of Birth:-</label>
+<input type="date" name="date_of_birth" required value="dob">
+</td>
+</tr>
+<tr>
+<td>
+<label>Gender:-</label>
+<div class="radio">
+<?php
+if($_SESSION['gender']=='Male')
+{
+echo '<input type="radio" name="gender" class="radio1" value="Male" checked><span class="radioname" required>Male</span>';
+echo '<input type="radio" class="radio2" name="gender" value="Female"><span class="radioname" required>Female</span>';
+}
+else
+{
+echo '<input type="radio" name="gender" class="radio1" value="Male"><span class="radioname" required>Male</span>';
+echo '<input type="radio" class="radio2" name="gender" value="Female" checked><span class="radioname" required>Female</span>';
+}
+?>
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<label>Blood Group</label>
+<input type="text" list="bloodgroup" name="blood_group" placeholder="----Select----" required value="blood group" readonly>
+<datalist id="bloodgroup">
+<option value="A+"></option>
+<option value="A-"></option>
+<option value="AB+"></option>
+<option value="B+"></option>
+<option value="B-"></option>
+<option value="O+"></option>
+<option value="O-"></option>
+</datalist>
+</td>
+</tr>
+<tr>
+<td>
+<label>Weight In Kg [Approx]:-</label>
+<input type="number" name="weight" required value="weight in kg" readonly>
+</td>
+</tr>
+</table>
+</div>
+
+
+<span>
+<input type="checkbox" name="terms" id="checkbox" required >
+</span><p>I agree to have my contact details broadcasted to the registered donors of CLKZ.net</p>
+<div class="btnn">
+<input type="submit" name="submit" value="Update">
+<input type="reset" name="submit" value="Reset">
+</div>
+</form>
+</div>
+<?php
+      include 'footer.php';
+    ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+jQuery.validator.addMethod("checkemail", function(value, element) {
+  return this.optional( element ) || /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i.test( value );
+}, 'Please enter a valid email address.');
+
+
+
+
+
+
+$(document).ready(function () {
+
+    $('#myform').validate({
+        rules: {
+            fname: {
+                required: true,
+             lettersonly:true,
+              
+            },
+            lname:{
+              required: true,
+              lettersonly:true,
+
+            },
+            email:{
+            required:true,
+            email:true,
+            checkemail:true,
+            },
+            password:{
+            required:true,
+            minlength:7,
+            maxlength:15,
+
+            },
+            confirm_password:{
+            required:true,
+            minlength:7,
+            maxlength:15,
+            equalTo: "#password",
+
+
+            },
+            contect_no:{
+            required:true,
+            minlength:10,
+            maxlength:10,
+            digits:true,
+            },
+            img:{
+            required:true,
+            // uploadfile:true,
+            accept: "jpg,png,jpeg,gif",
+            },
+       
+        },
+        messages:{
+        fname:{
+        required:"firstname is required",
+        lettersonly:"enter letters only",
+        },
+       
+        lname:{
+        required:"last name is required",
+        lettersonly:"enter letters only",
+        },
+        email:{
+        required:"email required",
+        email:"enter valid email",
+        checkemail:"enter proper email",
+
+        },
+password:{
+required:"password is required",
+minlength:"enter password between 7-15",
+maxlength:"enter password between 7-15",
+},
+confirm_password:{
+required:"password is required",
+minlength:"enter password between 7-15",
+maxlength:"enter password between 7-15",
+equalTo:"password must be same",
+
+
+},
+contact_no:{
+required:"contact no is required",
+minlength:"enter contact number 10digits",
+maxlength:"enter contact number 10digits",
+digits:"enter 10 digits",
+
+
+},
+        img:{
+        required:"upload image",
+        // uploadfile:"upload image",
+        accept:"upload image only jpg,jpeg,png ",
+
+
+        },
+        },
+    });
+
+});
+</script>
+
+</body>
+<script>
+function openNav()
+{
+  document.getElementById("mySidenav").style.display = "block";
+}
+function closeNav()
+{
+  document.getElementById("mySidenav").style.display = "none";
+}
+function share()
+{
+var a =document.getElementById("f");
+var b=document.getElementById("g");
+var c=document.getElementById("i");
+var d=document.getElementById("y");
+if (a.style.display === "none")
+{
+a.style.display="block";
+b.style.display="block";
+c.style.display="block";
+d.style.display="block";
+}
+else
+{
+a.style.display="none";
+b.style.display="none";
+c.style.display="none";
+d.style.display="none";
+}
+}
+</script>
+</html> 

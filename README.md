@@ -11,7 +11,7 @@ VIVEKANANDHA COLLEGE OF ENGINEERING FOR WOMENS
 TRICHENGODE
 
 # Software Required:
-Python, Flask , Docker
+Python, Flask , Docker ,HTML ,CSS
 
 # System Required:
 8GB RAM,Intel Core i3,OS-Windows/Linux/MAC ,Laptop or Desktop
